@@ -12,58 +12,59 @@
             padding: 0;
             text-align: center;
             color: #555;
-            overflow-y: scroll; /* Enables vertical scroll */
+            overflow-y: scroll;
         }
         ::-webkit-scrollbar {
-            width: 10px; /* Width of the scrollbar */
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #ffe4e1; /* Light pink background for track */
+            background: #ffe4e1;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #ff6f91; /* Pink thumb */
+            background: #ff6f91;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #ff4f7a; /* Darker pink on hover */
+            background: #ff4f7a;
         }
         h1 {
             color: #ff6f91;
-            margin: 100px 0 30px; /* Adjusted to move the heading further up */
-            font-size: 3em;
+            margin: 50px 10px 20px;
+            font-size: 2.5em;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
         p {
-            font-size: 1.3em;
-            margin: 20px;
+            font-size: 1.2em;
+            margin: 15px;
             color: #7d5a50;
+            padding: 0 10px;
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            max-width: 800px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            max-width: 90%;
             margin: 0 auto;
         }
         .gallery img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            border: 4px solid #ffd1dc;
+            border: 3px solid #ffd1dc;
             transition: transform 0.3s ease;
         }
         .gallery img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .personal-message {
-            margin-top: 30px; /* Adds spacing from the photo gallery */
+            margin: 20px 10px;
         }
-        .hearts {
+        .hearts, .cats {
             position: fixed;
             top: 0;
             left: 0;
@@ -72,8 +73,10 @@
             pointer-events: none;
             overflow: hidden;
         }
-        .heart {
+        .heart, .cat-sticker {
             position: absolute;
+        }
+        .heart {
             width: 20px;
             height: 20px;
             background: #ff6f91;
@@ -103,38 +106,69 @@
         audio {
             display: none;
         }
+        .cat-sticker {
+            width: 80px;
+            height: auto;
+            animation: float 5s infinite alternate ease-in-out;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3em;
+                margin: 80px 0 30px;
+            }
+            p {
+                font-size: 1.3em;
+                margin: 20px;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            .gallery img {
+                height: 200px;
+            }
+            .personal-message {
+                margin: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>🌸 Happy Monthsary, Mi Bubbubb ko! 🌸</h1>
-    <p>Every moment with you feels magical and precious. Thank you for being the sunshine in my life. Here's to more beautiful memories together! 💕</p>
-
+    <h1>🌷 Happy Monthsary, Mi Bubbubb ko! 🌷</h1>
+    <p>Every moment with you feels magical and precious. Thank you for being the sunshine in my life. Here's to more beautiful memories together! 💗</p>
     <div class="gallery">
-        <img src="https://via.placeholder.com/200" alt="Photo 1">
-        <img src="https://via.placeholder.com/200" alt="Photo 2">
-        <img src="https://via.placeholder.com/200" alt="Photo 3">
-        <img src="https://via.placeholder.com/200" alt="Photo 4">
-        <img src="https://via.placeholder.com/200" alt="Photo 5">
-        <img src="https://via.placeholder.com/200" alt="Photo 6">
+        <img src="assets/img/Screenshot (1007).jpg" alt="Photo 1">
+        <img src="assets/img/475638303_603822252613527_1912460309674756244_n.jpg" alt="Photo 2">
+        <img src="assets/img/476254839_1170997457972062_2802580243308675476_n.jpg" alt="Photo 3">
+        <img src="assets/img/476905380_608685061880499_3435620386194721313_n.jpg" alt="Photo 4">
+        <img src="assets/img/475517292_4104490563112615_2428993285014818461_n.jpg" alt="Photo 5">
+        <img src="assets/img/462646252_919699446675742_2773505337342760882_n.jpg" alt="Photo 6">
     </div>
 
     <div class="personal-message">
         <h2>💌 A Special Message Only for You 💌</h2>
-        <p>Mi Bubbubb, every heartbeat of mine dances to the melody of your name. You are mi joy, mi comfort, mi sunshine, and mi forever. Thank you for filling my life with huge endless happiness & your nonstop support and the love that i deserved . I cherish you more with each passing day. Iloveyouuu mi Bubbubb & Happy Monthsary!! 🌟</p>
+        <p>Mi Bubbubb, every heartbeat of mine dances to the melody of your name. You are mi joy, mi comfort, mi sunshine, and mi forever. Thank you for filling my life with huge endless happiness & your nonstop support and the love that i deserved . I cherish you more with each passing day.</p>
+        <br>
+        <p>Iloveyouuu mi bubbubb ko & Happy Monthsary!! 😽🌷✨💗</p>
     </div>
 
     <audio id="background-music" autoplay loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+        <source src="assets/audio/love.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <div class="hearts"></div>
+    <div class="cats"></div>
 
     <script>
-        window.addEventListener('load', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const music = document.getElementById('background-music');
+            music.muted = false;
             music.play().catch(() => {
-                console.log('Autoplay was blocked, user interaction required.');
+                document.body.addEventListener('click', () => {
+                    music.play();
+                }, { once: true });
             });
         });
 
@@ -148,8 +182,18 @@
             setTimeout(() => heart.remove(), 6000);
         }
 
-        // Increased heart generation rate for more hearts
+        function createCatSticker() {
+            const cat = document.createElement('img');
+            cat.src = 'https://placekitten.com/80/80'; // Cute cat placeholder
+            cat.classList.add('cat-sticker');
+            cat.style.left = Math.random() * 100 + 'vw';
+            cat.style.top = Math.random() * 100 + 'vh';
+            document.querySelector('.cats').appendChild(cat);
+            setTimeout(() => cat.remove(), 8000);
+        }
+
         setInterval(createHeart, 200);
+        setInterval(createCatSticker, 3000);
     </script>
 </body>
 </html>
