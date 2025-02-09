@@ -57,9 +57,32 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             border: 3px solid #ffd1dc;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .gallery img:hover {
             transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s ease;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 15px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .personal-message {
             margin: 20px 10px;
@@ -111,7 +134,6 @@
             height: auto;
             animation: float 5s infinite alternate ease-in-out;
         }
-
         @media (min-width: 768px) {
             h1 {
                 font-size: 3em;
@@ -145,10 +167,13 @@
         <img src="assets/img/475517292_4104490563112615_2428993285014818461_n.jpg" alt="Photo 5">
         <img src="assets/img/462646252_919699446675742_2773505337342760882_n.jpg" alt="Photo 6">
     </div>
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Enlarged Image">
+    </div>
 
     <div class="personal-message">
         <h2>💌 A Special Message Only for You 💌</h2>
-        <p>Mi Bubbubb, every heartbeat of mine dances to the melody of your name. You are mi joy, mi comfort, mi sunshine, and mi forever. Thank you for filling my life with huge endless happiness & your nonstop support and the love that i deserved . I cherish you more with each passing day.</p>
+        <p>Mi Darling, every heartbeat of mine dances to the melody of your name. You are mi joy, mi comfort, mi sunshine, and mi forever. Thank you for filling my life with huge endless happiness & your nonstop support and the love that i deserved . I cherish you more with each passing day.</p>
         <br>
         <p>Iloveyouuu mi bubbubb ko & Happy Monthsary!! 😽🌷✨💗</p>
     </div>
@@ -169,6 +194,20 @@
                 document.body.addEventListener('click', () => {
                     music.play();
                 }, { once: true });
+            });
+
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = lightbox.querySelector('img');
+
+            document.querySelectorAll('.gallery img').forEach(image => {
+                image.addEventListener('click', () => {
+                    lightboxImage.src = image.src;
+                    lightbox.style.display = 'flex';
+                });
+            });
+
+            lightbox.addEventListener('click', () => {
+                lightbox.style.display = 'none';
             });
         });
 
